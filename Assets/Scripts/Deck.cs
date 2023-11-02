@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Deck : MonoBehaviour
 {
-    public List<Card> cardList = new List<Card>();
+    public List<int> cardList = new List<int>();
 
     public int deckNum;
 
@@ -15,12 +15,13 @@ public class Deck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Resources.Load<Card>("Cards/card1")
         //Initialize deck (for testing)
         for (int i=0;i<4;i++){
-            cardList.Add(CardDB.cardList[1]);
-            cardList.Add(CardDB.cardList[3]);
+            cardList.Add(1);
+            cardList.Add(3);
             if (i>=2){
-                cardList.Add(CardDB.cardList[2]);
+                cardList.Add(2);
             }
         }
         Debug.Log("Deck created successful");
@@ -38,7 +39,7 @@ public class Deck : MonoBehaviour
         
         for (int i=0;i<cardList.Count;i++){
             int j = Random.Range(0,cardList.Count);
-            Card temp = cardList[i];
+            int temp = cardList[i];
             cardList[i] = cardList[j];
             cardList[j] = temp;
         }

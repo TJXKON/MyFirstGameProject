@@ -30,9 +30,9 @@ public class GameManager : MonoBehaviour
         deck = GameObject.Find("Deck").GetComponent<Deck>();
         handCards=GameObject.Find("HandCards");
         power=GameObject.Find("Power");
-        if (deck!=null){
+
             GameStart();
-        }
+
 
 
         
@@ -64,16 +64,18 @@ public class GameManager : MonoBehaviour
             }
 
             //Add card object
+            int id = deck.cardList[0];
+            Card card = Resources.Load<Card>("Cards/card_"+id);
             GameObject cardObject = Instantiate(cardPrefab,handCards.transform);
-
-            //Assign card from deck to hand card
-            cardObject.GetComponent<CardObject>().cardId = deck.cardList[0].id;
+            cardObject.GetComponent<CardDetails>().card=card;
 
             deck.cardList.RemoveAt(0);
 
             if(handCards.transform.childCount>7){
                 Destroy(cardObject);
             }
+
+            cardObject.GetComponent<CardDetails>().card.effect.perform();
          }
         
 
@@ -83,5 +85,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+
+
 }

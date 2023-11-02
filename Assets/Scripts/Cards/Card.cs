@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card
+[CreateAssetMenu(fileName="New Card",menuName="Card")]
+public class Card: ScriptableObject
 {
     public int id;
     public string cardName;
@@ -11,7 +12,9 @@ public class Card
     public string element;
     public string description;
 
-    //Constructor
+    [SerializeReference]public CardEffect effect;
+
+    
     public Card(){
 
     }
@@ -25,5 +28,7 @@ public class Card
         this.description=_description;
 
     }
+
+
 
 }

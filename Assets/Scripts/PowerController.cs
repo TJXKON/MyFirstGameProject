@@ -21,6 +21,10 @@ public class PowerController : MonoBehaviour
         powerText.text = "Power: "+power+"/"+maxPower;
     }
 
+    public void consume(int cost){
+        power-=cost;
+    }
+
     public void RefillAll(){
         power = maxPower;
     }
