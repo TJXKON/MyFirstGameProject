@@ -1,1 +1,1 @@
-# MyCardGameProject
+For personal learning purpose
