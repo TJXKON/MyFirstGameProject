@@ -18,4 +18,5 @@ MonoBehaviour:
   isQuick: n
   element: n
   description: no effect
+  imgPath: card_1
   effect: {fileID: 11400000, guid: 440dafbfeb501c748a5d79dfec1e8db9, type: 2}

@@ -23,6 +23,8 @@ public class Character : MonoBehaviour
     public int action;
     public int quick;
 
+    public bool isDefeated = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class Character : MonoBehaviour
         maxPower=data.maxPower;
         maxHp=data.maxHp;
         element=data.element;
+
+        isDefeated = false;
 
     }
 
@@ -43,6 +47,11 @@ public class Character : MonoBehaviour
         ActionController.quick=quick;
         hpController.maxHp=maxHp;
         hpController.hp=hp;
+
+        if(hp<=0){
+            Defeat();
+        }
+
     }
 
     public void Initialize(){
@@ -82,6 +91,14 @@ public class Character : MonoBehaviour
         int finalDamage = damage;
         //Calculation of final damage (pending)
         hp=hp-finalDamage;
+        if(hp<0){
+            hp=0;
+        }
         return finalDamage;
+    }
+
+    void Defeat(){
+        isDefeated = true;
+        GameObject.Find("Game Manager").GetComponent<GameManager>().CharacterDefeated();
     }
 }

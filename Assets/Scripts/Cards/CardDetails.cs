@@ -12,6 +12,7 @@ public class CardDetails : MonoBehaviour, IPointerClickHandler
     public Text descriptionText;
     public Image baseColor;
     public Image highlight;
+    public Image cardImage;
 
     public bool isActive = false;
 
@@ -33,6 +34,10 @@ public class CardDetails : MonoBehaviour, IPointerClickHandler
             default:
                 break;
         }
+
+        //cardImage.sprite = Resources.Load("Images/"+card.imgPath) as Sprite;
+        cardImage.sprite = Resources.Load<Sprite>("Images/"+card.imgPath) as Sprite;
+
     }
 
     // Update is called once per frame

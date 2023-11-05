@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class FlashController : MonoBehaviour
 {   
     public Material flashMaterial;
-    [SerializeField] private float duration = 0.3f;
+    [SerializeField] private float duration = 0.25f;
     private Image image;
     private Material originalMaterial;
     private Coroutine flashRoutine;

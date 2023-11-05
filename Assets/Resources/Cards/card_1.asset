@@ -18,4 +18,5 @@ MonoBehaviour:
   isQuick: n
   element: n
   description: Deal 5 damage
+  imgPath: card_1
   effect: {fileID: 11400000, guid: 3678038e2e8dcd549bcd4fbb54280776, type: 2}

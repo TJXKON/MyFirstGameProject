@@ -11,6 +11,7 @@ public class Card: ScriptableObject
     public string isQuick;
     public string element;
     public string description;
+    public string imgPath;
 
     [SerializeReference]public CardEffect effect;
 
@@ -19,13 +20,14 @@ public class Card: ScriptableObject
 
     }
     
-    public Card(int _id,string _cardName,int _cost, string _isQuick, string _element, string _description){
+    public Card(int _id,string _cardName,int _cost, string _isQuick, string _element, string _description, string _imgPath){
         this.id=_id;
         this.cardName=_cardName;
         this.cost=_cost;
         this.isQuick=_isQuick;
         this.element=_element;
         this.description=_description;
+        this.imgPath = _imgPath;
 
     }
 

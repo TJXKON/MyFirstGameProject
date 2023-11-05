@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject activeCard;
 
+    private MenuManager menu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
         handCards=GameObject.Find("HandCards");
         discardPile=GameObject.Find("DiscardPile").GetComponent<DiscardPile>();
         characters = GameObject.Find("CharacterContainer").GetComponentsInChildren<Character>();
+        menu = GameObject.Find("UIWindow").GetComponent<MenuManager>();
         /**
         foreach (Character c in characters)
         {
@@ -60,10 +63,13 @@ public class GameManager : MonoBehaviour
             case (GameState.playerEnd):
                 EndTurn();
                 break;
-            
+            case (GameState.enemyClear):
+                EnemyClear();
+                break;
             default:
                 break;
         }
+
     }
 
     void GameStart(){
@@ -157,6 +163,31 @@ public class GameManager : MonoBehaviour
 
         //gameState = GameState.enemyStart;
         gameState=GameState.enemyStart;
+    }
+
+    public void CharacterDefeated(){
+        foreach (Character c in characters)
+        {
+            if(!(c.isDefeated)){
+                return;
+            }
+        }
+        Invoke("GameOver",0.6f);
+    }
+    void GameOver(){
+        menu.GameOver();
+    }
+
+    void EnemyClear(){
+        //Spawn new enemy...
+        //gameState = GameState.playerTurn
+
+        //If all enemy cleared
+        Invoke("Victory",0.6f);
+    }
+
+    void Victory(){
+        menu.Victory();
     }
 
 }
