@@ -6,7 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NoEffect", menuName = "Card Effect/No Effect")]
 
 public class CardEffect : ScriptableObject {
-    public virtual void perform(){
+
+     
+    public virtual void apply(Card card){
         Debug.Log("No effect");
     }
 }

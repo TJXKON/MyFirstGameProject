@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d7b9dc0bfc40e47a5b39d6869c06fb, type: 3}
-  m_Name: card_2
+  m_Script: {fileID: 11500000, guid: 98d4ba16edb84744e96ccfad878b9e65, type: 3}
+  m_Name: Character1
   m_EditorClassIdentifier: 
-  id: 2
-  cardName: Heal
-  cost: 2
-  isQuick: n
-  element: n
-  description: Heal 10 ho
-  effect: {fileID: 11400000, guid: b4c78aef24ea4884aa5e2c679a533bb2, type: 2}
+  charId: 0
+  charName: Hi
+  maxPower: 5
+  maxHp: 20
+  element: b

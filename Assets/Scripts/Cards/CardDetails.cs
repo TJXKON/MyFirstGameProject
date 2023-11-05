@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public class CardDetails : MonoBehaviour
+public class CardDetails : MonoBehaviour, IPointerClickHandler
 {
     public Card card;
 
@@ -11,8 +11,9 @@ public class CardDetails : MonoBehaviour
     public Text costText;
     public Text descriptionText;
     public Image baseColor;
+    public Image highlight;
 
-
+    public bool isActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,18 @@ public class CardDetails : MonoBehaviour
     void Update()
     {
 
+        highlight.enabled = isActive;
+
 
     }
 
+    public void OnPointerClick(PointerEventData pointerEventData){
+        GameManager gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
+        gm.changeActiveCard(this.gameObject);
+        Debug.Log(card.id+" "+card.cardName+" selected.");
+
+
+
+    }
 }

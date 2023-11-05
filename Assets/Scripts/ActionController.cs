@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PowerController : MonoBehaviour
+public class ActionController : MonoBehaviour
 {
 
-    public int power = 0;
-    public int maxPower = 0;
-    public Text powerText;
+    public int action = 0;
+    public int quick = 0;
+    public Text actionText;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class PowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        powerText.text = "Power: "+power+"/"+maxPower;
+        actionText.text = "Action: "+action+", Quick: "+quick;
     }
 
 

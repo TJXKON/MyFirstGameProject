@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DiscardPile : MonoBehaviour
 {
-    public List<Card> cardList = new List<Card>();
+    public List<int> cardList = new List<int>();
 
     public int discardNum;
 
